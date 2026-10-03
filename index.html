@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Import Data using Transform Maps</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Import Data using Transform Maps</h1>
+    <p>Spreadsheet Data Import & Transformation System</p>
+</header>
+
+<div class="container">
+
+    <section class="card">
+        <h2>📂 Upload Spreadsheet</h2>
+
+        <p>
+            Upload a CSV file containing employee information.
+        </p>
+
+        <input type="file" id="fileInput" accept=".csv">
+
+        <button onclick="uploadFile()">Upload Data</button>
+
+        <p id="uploadStatus"></p>
+    </section>
+
+
+    <section class="card">
+        <h2>🔗 Transform Map</h2>
+
+        <div class="mapping">
+
+            <div>
+                <label>Source Field</label>
+                <select id="sourceField">
+                    <option value="employee_id">Employee ID</option>
+                    <option value="name">Name</option>
+                    <option value="email">Email</option>
+                    <option value="department">Department</option>
+                    <option value="salary">Salary</option>
+                </select>
+            </div>
+
+            <div class="arrow">➡</div>
+
+            <div>
+                <label>Target Field</label>
+                <select id="targetField">
+                    <option value="employee_id">Employee ID</option>
+                    <option value="name">Name</option>
+                    <option value="email">Email</option>
+                    <option value="department">Department</option>
+                    <option value="salary">Salary</option>
+                </select>
+            </div>
+
+        </div>
+
+        <button onclick="transformData()">
+            🔄 Apply Transform Map
+        </button>
+
+        <p id="transformStatus"></p>
+    </section>
+
+
+    <section class="card">
+        <h2>📊 Imported Data</h2>
+
+        <div class="table-container">
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th>Employee ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Department</th>
+                        <th>Salary</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>EMP001</td>
+                        <td>Arun Kumar</td>
+                        <td>arun@gmail.com</td>
+                        <td>IT</td>
+                        <td>45000</td>
+                    </tr>
+
+                    <tr>
+                        <td>EMP002</td>
+                        <td>Priya</td>
+                        <td>priya@gmail.com</td>
+                        <td>HR</td>
+                        <td>40000</td>
+                    </tr>
+
+                    <tr>
+                        <td>EMP003</td>
+                        <td>Rahul</td>
+                        <td>rahul@gmail.com</td>
+                        <td>Finance</td>
+                        <td>50000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+    <section class="card">
+        <h2>✅ Transformation Result</h2>
+
+        <div id="result">
+            No transformation applied yet.
+        </div>
+
+        <button onclick="downloadData()">
+            📥 Download Transformed Data
+        </button>
+    </section>
+
+</div>
+
+<footer>
+    <p>Import Data using Transform Maps | ServiceNow Project Demo</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
